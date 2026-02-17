@@ -12,7 +12,6 @@ const Navbar = () => {
     { label: "Why Sufra", href: "/#benefits" },
     { label: "Pricing", href: "/#pricing" },
     { label: "Contact", href: "/contact" },
-    { label: "Login", href: "#login" },
   ];
 
   const handleNavClick = (href: string) => {
@@ -49,7 +48,7 @@ const Navbar = () => {
             )
           )}
           <Button variant="default" size="sm" className="rounded-full px-6">
-            Get Started
+            Login
           </Button>
         </div>
 
@@ -74,7 +73,7 @@ const Navbar = () => {
             )
           )}
           <Button variant="default" size="sm" className="rounded-full px-6 w-full">
-            Get Started
+            Login
           </Button>
         </div>
       )}
