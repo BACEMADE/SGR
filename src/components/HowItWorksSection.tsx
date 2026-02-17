@@ -31,7 +31,7 @@ const HowItWorksSection = () => {
             <div className="pt-6 flex justify-center">
               <div className="w-48 h-48 rounded-2xl border-2 border-foreground/10 bg-card flex items-center justify-center relative overflow-hidden">
                 <div className="absolute inset-0 bg-gradient-to-br from-accent/20 to-transparent" />
-                <div className="flex gap-2 items-end relative z-10">
+                <div className="flex gap-2 items-end relative z-10 flex-wrap justify-center">
                   <div className="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center">
                     <Users className="w-4 h-4 text-primary" />
                   </div>
@@ -40,6 +40,12 @@ const HowItWorksSection = () => {
                   </div>
                   <div className="w-8 h-8 rounded-full bg-accent/30 flex items-center justify-center">
                     <Users className="w-4 h-4 text-accent" />
+                  </div>
+                  <div className="w-8 h-8 rounded-full bg-primary/15 flex items-center justify-center">
+                    <Users className="w-4 h-4 text-primary" />
+                  </div>
+                  <div className="w-8 h-8 rounded-full bg-secondary/15 flex items-center justify-center">
+                    <Users className="w-4 h-4 text-secondary" />
                   </div>
                 </div>
               </div>
