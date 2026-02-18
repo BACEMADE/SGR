@@ -4,7 +4,7 @@ import heroImage from "@/assets/hero-image.jpg";
 
 const HeroSection = () => {
   return (
-    <section className="min-h-[90vh] flex items-center pt-20 bg-background">
+    <section className="min-h-[90vh] flex items-center pt-20 bg-background py-[24px]">
       <div className="container mx-auto px-6">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           <div className="space-y-6">
@@ -28,8 +28,8 @@ const HeroSection = () => {
                 <Button
                   variant="ghost"
                   size="lg"
-                  className="rounded-full px-8 text-base text-foreground hover:bg-muted w-full sm:w-auto"
-                >
+                  className="rounded-full px-8 text-base text-foreground hover:bg-muted w-full sm:w-auto">
+
                   How It Works
                 </Button>
               </a>
@@ -41,14 +41,14 @@ const HeroSection = () => {
               <img
                 src={heroImage}
                 alt="Saudi food creator capturing restaurant content"
-                className="w-full aspect-[4/3] object-cover"
-              />
+                className="w-full aspect-[4/3] object-cover" />
+
             </div>
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>);
+
 };
 
 export default HeroSection;
