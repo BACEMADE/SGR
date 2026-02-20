@@ -4,8 +4,8 @@ import { Link } from "react-router-dom";
 
 const CTASection = () => {
   return (
-    <section className="py-24 md:py-32 bg-espresso text-espresso-foreground">
-      <div className="container mx-auto px-6 text-center max-w-2xl space-y-6">
+    <section className="py-16 md:py-32 bg-espresso text-espresso-foreground">
+      <div className="container mx-auto px-5 md:px-6 text-center max-w-2xl space-y-5 md:space-y-6">
         <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif leading-tight">
           Ready to grow your restaurant with{" "}
           <span className="text-primary italic">real content?</span>

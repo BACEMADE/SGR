@@ -23,9 +23,9 @@ const testimonials = [
 
 const TestimonialsSection = () => {
   return (
-    <section id="testimonials" className="py-24 md:py-32 bg-card">
-      <div className="container mx-auto px-6">
-        <div className="text-center mb-16 space-y-3">
+    <section id="testimonials" className="py-16 md:py-32 bg-card">
+      <div className="container mx-auto px-5 md:px-6">
+        <div className="text-center mb-10 md:mb-16 space-y-3">
           <p className="text-sm font-semibold uppercase tracking-widest text-accent">
             Testimonials
           </p>

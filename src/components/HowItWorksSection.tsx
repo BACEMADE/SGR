@@ -2,10 +2,10 @@ import { Users, Camera, TrendingUp, Star, MapPin, AtSign } from "lucide-react";
 
 const HowItWorksSection = () => {
   return (
-    <section id="how-it-works" className="py-24 md:py-32 bg-background">
-      <div className="container mx-auto px-6">
+    <section id="how-it-works" className="py-16 md:py-32 bg-background">
+      <div className="container mx-auto px-5 md:px-6">
         {/* Header */}
-        <div className="text-center mb-20 space-y-4">
+        <div className="text-center mb-12 md:mb-20 space-y-4">
           <p className="text-sm font-semibold uppercase tracking-widest text-primary">
             Simple Process
           </p>
@@ -17,7 +17,7 @@ const HowItWorksSection = () => {
         </div>
 
         {/* 3 Columns */}
-        <div className="grid md:grid-cols-3 gap-12 max-w-5xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-12 max-w-5xl mx-auto">
           {/* Step 1 */}
           <div className="text-center space-y-4">
             <h3 className="text-xl md:text-2xl font-serif text-foreground">

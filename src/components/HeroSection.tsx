@@ -5,11 +5,11 @@ import heroImage from "@/assets/hero-image.jpg";
 
 const HeroSection = () => {
   return (
-    <section className="min-h-[90vh] flex items-center pt-20 bg-background py-[24px]">
-      <div className="container mx-auto px-6">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-          <div className="space-y-6">
-            <h1 className="text-4xl md:text-5xl lg:text-[3.5rem] font-serif leading-[1.1] text-foreground">
+    <section className="min-h-[85vh] md:min-h-[90vh] flex items-center pt-20 bg-background py-6">
+      <div className="container mx-auto px-5 md:px-6">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-20 items-center">
+          <div className="space-y-5 md:space-y-6">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[3.5rem] font-serif leading-[1.1] text-foreground">
               Connecting Saudi Restaurants With Local Food Creators —{" "}
               <span className="text-primary italic">Every Month.</span>
             </h1>

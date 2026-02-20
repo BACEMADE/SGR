@@ -93,8 +93,8 @@ const Signup = () => {
   return (
     <>
       <Navbar />
-      <div className="min-h-screen bg-background flex items-start justify-center pt-24 pb-12 px-4">
-      <div className="w-full max-w-2xl bg-card rounded-2xl shadow-lg p-8 md:p-12 space-y-8">
+      <div className="min-h-screen bg-background flex items-start justify-center pt-20 md:pt-24 pb-8 md:pb-12 px-3 md:px-4">
+      <div className="w-full max-w-2xl bg-card rounded-2xl shadow-lg p-5 sm:p-8 md:p-12 space-y-6 md:space-y-8">
         {/* Header */}
         <div className="text-center space-y-2">
           <Link to="/" className="inline-block">
