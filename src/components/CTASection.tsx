@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const CTASection = () => {
   return (
@@ -12,10 +13,12 @@ const CTASection = () => {
         <p className="text-espresso-foreground/70 text-lg">
           Join 200+ Saudi restaurants already on the platform. No long-term contracts.
         </p>
-        <Button size="lg" className="rounded-full px-10 text-base gap-2 group">
-          Get Started
-          <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-        </Button>
+        <Link to="/signup">
+          <Button size="lg" className="rounded-full px-10 text-base gap-2 group">
+            Get Started
+            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+          </Button>
+        </Link>
       </div>
     </section>
   );
