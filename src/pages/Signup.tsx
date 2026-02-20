@@ -12,6 +12,7 @@ import {
 import { Separator } from "@/components/ui/separator";
 import { User, Building2, Plus } from "lucide-react";
 import { Link } from "react-router-dom";
+import Navbar from "@/components/Navbar";
 
 interface BusinessForm {
   businessName: string;
@@ -90,7 +91,9 @@ const Signup = () => {
   };
 
   return (
-    <div className="min-h-screen bg-background flex items-start justify-center py-12 px-4">
+    <>
+      <Navbar />
+      <div className="min-h-screen bg-background flex items-start justify-center pt-24 pb-12 px-4">
       <div className="w-full max-w-2xl bg-card rounded-2xl shadow-lg p-8 md:p-12 space-y-8">
         {/* Header */}
         <div className="text-center space-y-2">
@@ -250,6 +253,7 @@ const Signup = () => {
         </form>
       </div>
     </div>
+    </>
   );
 };
 
