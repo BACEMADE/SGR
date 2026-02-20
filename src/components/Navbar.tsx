@@ -47,9 +47,11 @@ const Navbar = () => {
               </a>
             )
           )}
-          <Button variant="default" size="sm" className="rounded-full px-6">
-            Login
-          </Button>
+          <Link to="/login">
+            <Button variant="default" size="sm" className="rounded-full px-6">
+              Login
+            </Button>
+          </Link>
         </div>
 
         {/* Mobile toggle */}
@@ -72,9 +74,11 @@ const Navbar = () => {
               </a>
             )
           )}
-          <Button variant="default" size="sm" className="rounded-full px-6 w-full">
-            Login
-          </Button>
+          <Link to="/login" onClick={() => setOpen(false)}>
+            <Button variant="default" size="sm" className="rounded-full px-6 w-full">
+              Login
+            </Button>
+          </Link>
         </div>
       )}
     </nav>
