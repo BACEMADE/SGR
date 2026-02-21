@@ -16,6 +16,15 @@ import Performance from "./pages/partner/Performance";
 import Profile from "./pages/partner/Profile";
 import Billing from "./pages/partner/Billing";
 import Support from "./pages/partner/Support";
+import PartnerMessages from "./pages/partner/Messages";
+import CreatorLayout from "./components/creator/CreatorLayout";
+import CreatorLogin from "./pages/creator/CreatorLogin";
+import CreatorDashboard from "./pages/creator/CreatorDashboard";
+import CreatorVisits from "./pages/creator/CreatorVisits";
+import CreatorSubmitContent from "./pages/creator/CreatorSubmitContent";
+import CreatorMessages from "./pages/creator/CreatorMessages";
+import CreatorProfile from "./pages/creator/CreatorProfile";
+import CreatorSupport from "./pages/creator/CreatorSupport";
 
 const queryClient = new QueryClient();
 
@@ -41,6 +50,19 @@ const App = () => (
             <Route path="profile" element={<Profile />} />
             <Route path="billing" element={<Billing />} />
             <Route path="support" element={<Support />} />
+            <Route path="messages" element={<PartnerMessages />} />
+          </Route>
+
+          {/* Creator Portal */}
+          <Route path="/creator/login" element={<CreatorLogin />} />
+          <Route path="/creator" element={<CreatorLayout />}>
+            <Route index element={<Navigate to="/creator/dashboard" replace />} />
+            <Route path="dashboard" element={<CreatorDashboard />} />
+            <Route path="visits" element={<CreatorVisits />} />
+            <Route path="submit" element={<CreatorSubmitContent />} />
+            <Route path="messages" element={<CreatorMessages />} />
+            <Route path="profile" element={<CreatorProfile />} />
+            <Route path="support" element={<CreatorSupport />} />
           </Route>
 
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
