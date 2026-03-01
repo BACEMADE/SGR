@@ -16,6 +16,7 @@ import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { creator } from "@/data/mockCreatorData";
 import { useScheduling } from "@/context/SchedulingContext";
+import { useAuth } from "@/context/AuthContext";
 
 const navItems = [
   { label: "Overview", path: "/creator/dashboard", icon: LayoutDashboard },
@@ -63,8 +64,11 @@ const CreatorLayout = () => {
   const navigate = useNavigate();
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
-  const handleLogout = () => {
-    navigate("/creator/login");
+  const { signOut } = useAuth();
+
+  const handleLogout = async () => {
+    await signOut();
+    navigate("/login");
   };
 
   const SidebarContent = () => (

@@ -17,6 +17,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { restaurant } from "@/data/mockPartnerData";
+import { useAuth } from "@/context/AuthContext";
 
 const navItems = [
   { label: "Overview", path: "/partner/dashboard", icon: LayoutDashboard },
@@ -34,7 +35,10 @@ const PartnerLayout = () => {
   const navigate = useNavigate();
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
-  const handleLogout = () => {
+  const { signOut } = useAuth();
+
+  const handleLogout = async () => {
+    await signOut();
     navigate("/login");
   };
 

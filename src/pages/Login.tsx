@@ -4,6 +4,8 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { UtensilsCrossed, Camera } from "lucide-react";
+import { useAuth } from "@/context/AuthContext";
+import { toast } from "sonner";
 import Navbar from "@/components/Navbar";
 
 type Role = null | "partner" | "creator";
@@ -12,11 +14,22 @@ const Login = () => {
   const [role, setRole] = useState<Role>(null);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
+  const { signIn } = useAuth();
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (role === "partner") {
+    setIsLoading(true);
+    const { error, role: userRole } = await signIn(email, password);
+    setIsLoading(false);
+
+    if (error) {
+      toast.error(error);
+      return;
+    }
+
+    if (userRole === "partner") {
       navigate("/partner/dashboard");
     } else {
       navigate("/creator/dashboard");
@@ -28,7 +41,6 @@ const Login = () => {
       <Navbar />
       <div className="min-h-screen bg-background flex items-center justify-center pt-20 pb-8 px-3 md:px-4">
         <div className="w-full max-w-md bg-card rounded-2xl shadow-lg p-8 md:p-10 space-y-6">
-          {/* Header */}
           <div className="text-center space-y-2">
             <Link to="/" className="inline-block">
               <h2 className="text-3xl font-serif text-accent">Sufra</h2>
@@ -44,7 +56,6 @@ const Login = () => {
           </div>
 
           {!role ? (
-            /* Role Selection */
             <div className="space-y-4">
               <button
                 onClick={() => setRole("partner")}
@@ -80,7 +91,6 @@ const Login = () => {
               </p>
             </div>
           ) : (
-            /* Login Form */
             <form onSubmit={handleSubmit} className="space-y-5">
               <div className="space-y-1.5">
                 <Label htmlFor="email">Email Address</Label>
@@ -90,6 +100,7 @@ const Login = () => {
                   placeholder="you@example.com"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
+                  required
                 />
               </div>
 
@@ -101,21 +112,20 @@ const Login = () => {
                   placeholder="••••••••"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
+                  required
                 />
               </div>
 
               <Button
                 type="submit"
                 size="lg"
+                disabled={isLoading}
                 className="w-full rounded-full text-base bg-accent text-accent-foreground hover:bg-accent/90"
               >
-                Log In
+                {isLoading ? "Logging in…" : "Log In"}
               </Button>
 
               <div className="text-center space-y-2">
-                <a href="#" className="text-sm text-accent hover:underline">
-                  Forgot your password?
-                </a>
                 <p className="text-sm text-muted-foreground">
                   <button
                     type="button"
