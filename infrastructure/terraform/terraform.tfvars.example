@@ -1,0 +1,17 @@
+# Copy this file to terraform.tfvars and fill in your values
+# NEVER commit terraform.tfvars to version control
+
+aws_region    = "us-east-1"
+environment   = "production"
+project_name  = "sufra"
+
+db_username   = "sufra_admin"
+db_password   = "CHANGE_ME_TO_A_STRONG_PASSWORD"
+db_name       = "sufra_db"
+
+jwt_secret    = "CHANGE_ME_TO_A_RANDOM_64_CHAR_STRING"
+
+backend_image = "123456789012.dkr.ecr.us-east-1.amazonaws.com/sufra-backend:latest"
+backend_port  = 3000
+
+domain_name   = ""
